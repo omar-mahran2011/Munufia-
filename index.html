@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>أطلس المنوفية — إنجازات بلدي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Amiri:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#F6EFE1;--paper2:#EFE4CC;--ink:#17332F;--ink2:#3A5652;
+ --teal:#164A45;--terra:#C1552C;--gold:#B4862A;--line:#17332F33;
+ --s1:1.05rem;--s2:1.55rem;--s3:clamp(2.6rem,9vw,4.6rem)
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:Cairo,Tahoma,sans-serif;font-size:var(--s1);font-weight:400;line-height:2;color:var(--ink);
+ background:var(--paper);
+ background-image:
+  radial-gradient(circle at 100% 0%,#00000009,transparent 40%),
+  repeating-linear-gradient(0deg,transparent,transparent 38px,#17332F08 39px);
+}
+h1,h2,h3{font-weight:900;letter-spacing:-.01em}
+em{font-family:Amiri,serif;font-style:italic;color:var(--terra)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.wrap{max-width:840px;margin:auto;padding:0 24px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.82rem;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+.tag:before{content:"";width:26px;height:2px;background:var(--terra)}
+nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:2px solid var(--ink);}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;gap:14px;overflow-x:auto}
+nav b{font-weight:900;white-space:nowrap}
+nav .links{display:flex;gap:22px;white-space:nowrap}
+nav a{text-decoration:none;font-weight:800;font-size:.95rem;color:var(--ink2)}
+nav a:hover{color:var(--terra)}
+
+.hero{padding:70px 0 40px;position:relative;overflow:hidden}
+.delta{position:absolute;left:-8%;top:-6%;width:min(60vw,460px);opacity:.9;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.byline{font-weight:800;color:var(--ink2);margin:16px 0 22px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.byline b{color:var(--ink)}
+.byline .dot{width:5px;height:5px;border-radius:50%;background:var(--terra)}
+h1{font-size:var(--s3);line-height:1.15;margin-top:14px}
+h1 span{display:block}
+.hero p.lede{max-width:34em;color:var(--ink2);margin:20px 0 30px;font-size:1.15rem;line-height:1.85}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-weight:800;
+ padding:12px 26px;border-radius:2px;text-decoration:none;border:0;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:var(--terra);transform:translateY(-2px)}
+.rule{height:2px;background:var(--ink);margin:0 0 4px}
+.rule.thin{height:1px;background:var(--line);margin:0}
+
+section{padding:56px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:28px}
+.head h2{font-size:var(--s2)}
+.head .no{font-family:Amiri,serif;font-style:italic;font-size:1.6rem;color:var(--terra)}
+
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0}
+.about-grid .cell{border-top:1px solid var(--line);padding:16px 0}
+.about-grid .cell:not(:last-child){border-inline-end:1px solid var(--line);padding-inline-end:18px}
+.about-grid .cell b{display:block;font-weight:800;color:var(--teal);margin-bottom:4px}
+.about-grid .cell span{color:var(--ink2)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.stamp{border:2px solid var(--ink);padding:20px 22px;position:relative;background:var(--paper2)}
+.stamp:before{content:"";position:absolute;inset:5px;border:1px dashed var(--ink);pointer-events:none}
+.stamp .num{display:block;font-weight:900;font-size:clamp(2rem,7vw,2.7rem);color:var(--terra);line-height:1}
+.stamp .unit{font-weight:800;color:var(--ink);margin-inline-start:6px}
+.stamp p{color:var(--ink2);margin-top:8px;font-size:.98rem;line-height:1.75}
+
+.index-list{border-top:2px solid var(--ink)}
+.entry{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);
+ background:none;border-inline:0;border-top:0;width:100%;text-align:right;cursor:pointer;color:inherit;font:inherit}
+.entry .ic{width:44px;height:44px}
+.entry .ic svg{width:100%;height:100%;stroke:var(--teal);fill:none;stroke-width:1.6}
+.entry b{display:block;font-weight:800;font-size:1.12rem}
+.entry span{color:var(--ink2);font-size:.95rem}
+.entry .go{font-weight:900;color:var(--terra);font-size:1.3rem;transition:transform .25s}
+.entry[aria-expanded=true]{background:var(--paper2)}
+.entry[aria-expanded=true] .go{transform:rotate(90deg)}
+.detail{overflow:hidden;max-height:0;transition:max-height .4s ease}
+.detail[data-open=true]{max-height:420px}
+.detail ul{padding:6px 4px 22px 70px;color:var(--ink2)}
+.detail li{margin:9px 0}
+.detail li::marker{color:var(--terra)}
+
+.card{border:2px solid var(--ink);padding:26px 28px;background:var(--paper2)}
+.opts{display:grid;gap:10px;margin:18px 0}
+.opts button{background:var(--paper);border:1px solid var(--ink);padding:11px 16px;text-align:start;font-weight:800;cursor:pointer;transition:border-color .2s,background .2s}
+.opts button:not(:disabled):hover{border-color:var(--terra)}
+.opts button.ok{background:#1F6B4E;border-color:#1F6B4E;color:#fff}
+.opts button.no{background:#8E2E23;border-color:#8E2E23;color:#fff}
+.fb{min-height:2em;font-weight:800;color:var(--terra)}
+.score{font-family:Amiri,serif;font-style:italic;font-size:1.6rem}
+
+footer{padding:30px 0 70px}
+footer h2{font-size:var(--s2);margin:34px 0 12px}
+.crest{width:64px;height:64px;margin-bottom:14px}
+.info-card{border:2px solid var(--ink);padding:24px 26px}
+.info-card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px}
+.info-card dt{color:var(--ink2);font-weight:800;white-space:nowrap}
+.info-card dd{margin:0}
+footer p.src{color:var(--ink2);font-size:.95rem}
+
+.spike{position:absolute;opacity:.18;pointer-events:none}
+.spike svg{width:100%;height:100%;stroke:var(--gold);fill:none;stroke-width:1.4}
+.about .spike{left:auto;right:-4%;top:10%;width:120px}
+.js .rv.in{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.float{animation:float 5s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+ <b>أطلس المنوفية</b>
+ <div class="links"><a href="#about">المحافظة</a><a href="#stats">بالأرقام</a><a href="#index">فهرس الإنجازات</a><a href="#quiz">اختبار</a></div>
+</div></nav>
+
+<header class="hero">
+ <svg class="delta" viewBox="0 0 300 300" aria-hidden="true">
+  <path d="M150 20 C90 120 40 200 150 280" stroke="#17332F" stroke-width="2" fill="none" opacity=".35"/>
+  <path d="M150 20 C210 120 260 200 150 280" stroke="#17332F" stroke-width="2" fill="none" opacity=".35"/>
+  <path d="M150 20 C90 120 40 200 150 280" stroke="#C1552C" stroke-width="1" fill="none" opacity=".5" stroke-dasharray="3 6"/>
+  <path d="M150 20 C210 120 260 200 150 280" stroke="#C1552C" stroke-width="1" fill="none" opacity=".5" stroke-dasharray="3 6"/>
+  <circle cx="150" cy="150" r="4" fill="#B4862A"/>
+ </svg>
+ <div class="wrap">
+  <span class="tag">مسابقة إنجازات بلدي · الحلقة الإعدادية</span>
+  <h1><span>أطلس</span><span><em>المنوفية</em></span></h1>
+  <div class="byline"><b>عمر شادي حمدي مهران</b><i class="dot"></i><span>الصف الثالث الإعدادي</span><i class="dot"></i><span>المدرسة الرسمية المتميزة والمتكاملة للغات</span></div>
+  <p class="lede">دليل مصوَّر لإنجازات الدولة في أرض المنوفية — بين فرعي النيل، من مصانع السادات إلى قرى حياة كريمة — يرويه طالب من شبين الكوم لأبناء محافظته.</p>
+  <a class="btn" href="#index">↓ تصفّح الفهرس</a>
+ </div>
+</header>
+
+<section id="about" class="about" style="position:relative;overflow:hidden"><div class="wrap">
+ <svg class="spike" viewBox="0 0 40 140" aria-hidden="true"><path d="M20 10v120M20 20l14-10M20 30l-14-10M20 45l14-10M20 55l-14-10M20 70l14-10M20 80l-14-10M20 95l14-10M20 105l-14-10"/></svg>
+ <div class="head"><h2>عن المحافظة</h2><span class="no">01</span></div>
+ <div class="about-grid">
+  <div class="cell"><b>العاصمة</b><span>مدينة شبين الكوم</span></div>
+  <div class="cell"><b>الموقع</b><span>قلب الدلتا، بين فرعي النيل دمياط ورشيد</span></div>
+  <div class="cell"><b>أبرز مدنها</b><span>شبين الكوم، منوف، أشمون، قويسنا، الباجور، مدينة السادات</span></div>
+  <div class="cell"><b>من أبنائها</b><span>الرئيس الراحل محمد أنور السادات، وباسمه سُمّيت مدينة السادات</span></div>
+ </div>
+ <div id="fact" class="card" style="margin-top:22px;cursor:pointer" title="اضغط لمعلومة جديدة">
+  <span class="tag">معلومة اليوم</span>
+  <p id="factTxt" style="margin-top:8px;font-weight:800"></p>
+ </div>
+</div></section>
+
+<section id="stats"><div class="wrap">
+ <div class="head"><h2>المنوفية بالأرقام</h2><span class="no">02</span></div>
+ <div class="stats">
+  <div class="stamp"><span class="num" data-to="18">0</span><span class="unit">مليار جنيه</span>
+   <p>استثمارات عامة مخصصة للمحافظة في العامين الماليين 2025/2026 و2026/2027 تقريبًا، بحسب وزارة التخطيط.</p></div>
+  <div class="stamp"><span class="num" data-to="130">0</span><span class="unit">مشروعًا</span>
+   <p>ضمّتها خطة المحافظة للعام المالي 2025/2026، بنسبة تنفيذ أعلنها المحافظ بلغت 100%.</p></div>
+  <div class="stamp"><span class="num" data-to="1606">0</span><span class="unit">مشروع</span>
+   <p>ضمن «حياة كريمة» بقرى مركزي أشمون والشهداء، بنسبة تنفيذ تجاوزت 85% حتى نوفمبر 2023.</p></div>
+ </div>
+</div></section>
+
+<section id="index"><div class="wrap">
+ <div class="head"><h2>فهرس الإنجازات</h2><span class="no">03</span></div>
+ <input id="srch" type="search" placeholder="ابحث في الفهرس... مثلاً: طرق" style="width:100%;padding:12px 16px;border:2px solid var(--ink);background:var(--paper);font:inherit;font-weight:800;margin-bottom:16px">
+ <p id="noRes" style="display:none;color:var(--ink2)">لا توجد نتائج مطابقة.</p>
+ <div class="index-list" id="lst"></div>
+</div></section>
+
+<section id="quiz"><div class="wrap">
+ <div class="head"><h2>اختبار قصير</h2><span class="no">04</span></div>
+ <div class="card" id="q"></div>
+</div></section>
+
+<footer><div class="wrap">
+ <div class="head"><h2>بطاقة المشروع</h2><span class="no">05</span></div>
+ <div class="info-card">
+  <dl>
+   <dt>اسم العمل</dt><dd>أطلس المنوفية — إنجازات بلدي</dd>
+   <dt>الطالب</dt><dd>عمر شادي حمدي مهران</dd>
+   <dt>المدرسة</dt><dd>المدرسة الرسمية المتميزة والمتكاملة للغات</dd>
+   <dt>الصف</dt><dd>الثالث الإعدادي</dd>
+   <dt>المديرية</dt><dd>مديرية التربية والتعليم بالمنوفية</dd>
+   <dt>البرامج</dt><dd>HTML وCSS وJavaScript</dd>
+   <dt>الهدف</dt><dd>تعريف طلاب المرحلة الإعدادية بإنجازات الدولة في محافظتهم بأسلوب مرجعي مبسّط.</dd>
+  </dl>
+ </div>
+ <h2 style="font-size:1.2rem;margin-top:30px">المصادر</h2>
+ <p class="src">وزارة التخطيط والتنمية الاقتصادية (خطة المواطن الاستثمارية للمنوفية)، بوابة الأهرام، اليوم السابع، أموال الغد، وزارة الإسكان (مدينة السادات)، ومعلومات عامة عن المحافظة.</p>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+const ICONS={
+factory:'<svg viewBox="0 0 24 24"><path d="M3 21V11l5 3V11l5 3V8l8 4v9H3z"/><path d="M7 21v-4M12 21v-4M17 21v-4"/></svg>',
+cap:'<svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/><path d="M22 9v6"/></svg>',
+service:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>',
+village:'<svg viewBox="0 0 24 24"><path d="M3 21V10l6-5 6 5v11"/><path d="M15 21v-7l6-4v11"/><path d="M8 21v-5h2v5"/></svg>',
+home:'<svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg>',
+road:'<svg viewBox="0 0 24 24"><path d="M9 3L4 21M15 3l5 18M12 6v3M12 12v3M12 18v2"/></svg>'
+};
+const T=[
+{k:"الصناعة",icon:"factory",t:"السادات: مدينة صناعية في قلب الدلتا",l:[
+"مدينة السادات من المدن الأولى التي أنشأتها الدولة، وهي مدينة صناعية وسكنية وزراعية وسياحية.",
+"نُفذت مرافق الطرق والمياه والصرف للمناطق الصناعية، ومنها المنطقة الصناعية الثامنة، لخدمة المصانع.",
+"جرى رفع كفاءة الطرق داخل المناطق الصناعية لتسهيل حركة النقل والعمال."]},
+{k:"التعليم",icon:"cap",t:"جامعتان قريبتان من أبناء المحافظة",l:[
+"جامعة المنوفية في شبين الكوم، وجامعة السادات في مدينة السادات.",
+"تتيح الجامعتان التعليم الجامعي لأبناء المحافظة بالقرب من بيوتهم.",
+"جرى العمل على إنشاء مبانٍ وفصول لكليات بجامعة السادات، مثل الصيدلة وطب الأسنان والحقوق."]},
+{k:"الخدمات",icon:"service",t:"خطط المحافظة والمواطن",l:[
+"ضمت خطة المحافظة للعام 2025/2026 نحو 130 مشروعًا في النقل والطرق وتحسين البيئة والخدمات المحلية والتنمية الاقتصادية والتنمية الحضرية والريفية.",
+"تتضمن خطة المواطن الاستثمارية للمحافظة توصيل شبكة الغاز الطبيعي وإنشاء مجمعات خدمات زراعية.",
+"وتشمل تأهيل الترع وتبطينها، وأبراج شبكات المحمول، وتوصيل الألياف الضوئية للإنترنت."]},
+{k:"حياة كريمة",icon:"village",t:"تطوير القرى ضمن المبادرة الرئاسية",l:[
+"بلغ عدد المشروعات 1606 مشروعات بقرى مركزي أشمون والشهداء، وتجاوزت نسبة التنفيذ 85% حتى نوفمبر 2023.",
+"شملت المشروعات مياه الشرب والصرف الصحي والتعليم؛ ففي 2022 أُعلن عن 150 مشروعًا لمياه الشرب و104 للصرف الصحي و118 للتعليم.",
+"وأُعلن عن إنشاء وتجديد 12 وحدة صحية و37 مدرسة بمدينة الشهداء."]},
+{k:"الإسكان",icon:"home",t:"بيوت جديدة في الفردوس والنور والكوثر",l:[
+"تنفذ الدولة في مدينة السادات أحياء للإسكان الاجتماعي، منها الفردوس والنور والكوثر.",
+"تدخل هذه الوحدات ضمن مبادرة «سكن لكل المصريين» لمحدودي الدخل.",
+"تُجهَّز الأحياء بشبكات الطرق والمياه والصرف حتى تصبح صالحة للسكن."]},
+{k:"الطرق",icon:"road",t:"طرق تربط المدن ببعضها",l:[
+"شهد الطريق الإقليمي بين كفر داود والسادات أعمال صيانة ورصف نفذتها الهيئة العامة للطرق والكباري.",
+"أكد المحافظ حرص المحافظة على إقامة محاور مرورية جديدة ورصف الطرق الرئيسية والداخلية ورفع كفاءتها.",
+"تتابع الوحدات المحلية رصف الشوارع الداخلية وتوسعتها في مدن المحافظة وقراها."]}
+];
+const lst=$("#lst");
+T.forEach((o,i)=>{
+ const $row=$('<button class="entry" aria-expanded="false"></button>')
+  .html('<span class="ic">'+ICONS[o.icon]+'</span><span><b></b><span class="sub"></span></span><span class="go">›</span>')
+  .attr("data-key",(o.k+" "+o.t+" "+o.l.join(" ")).toLowerCase());
+ $row.find("b").text(o.k);
+ $row.find(".sub").text(o.t);
+ const $det=$('<div class="detail"></div>');
+ const $ul=$("<ul></ul>");
+ o.l.forEach(x=>$ul.append($("<li></li>").text(x)));
+ $det.append($ul);
+ $row.on("click",function(){
+  const open=$(this).attr("aria-expanded")==="true";
+  lst.find(".entry").attr("aria-expanded","false");
+  lst.find(".detail").removeAttr("data-open");
+  if(!open){$(this).attr("aria-expanded","true");$det.attr("data-open","true")}
+ });
+ lst.append($row).append($det);
+});
+lst.find(".entry").first().trigger("click");
+
+$("#srch").on("input",function(){
+ const q=$(this).val().trim().toLowerCase();
+ let any=false;
+ lst.find(".entry").each(function(){
+  const hit=$(this).attr("data-key").indexOf(q)>-1;
+  $(this).toggle(hit);$(this).next(".detail").toggle(hit);
+  if(hit)any=true;
+ });
+ $("#noRes").toggle(!any);
+});
+
+const FACTS=[
+"غالبية الأراضي الزراعية بالمنوفية تعتمد على زراعة محصول الذرة، بحسب وكيل وزارة الزراعة بالمحافظة.",
+"تقع المنوفية بين فرعي النيل دمياط ورشيد، في قلب أراضي الدلتا الخصبة.",
+"وُلد الرئيس الراحل محمد أنور السادات بقرية ميت أبو الكوم بالمنوفية، وباسمه سُمّيت مدينة السادات الصناعية.",
+"جامعة المنوفية بشبين الكوم وجامعة السادات بمدينة السادات تخدمان أبناء المحافظة بكلياتهما المتنوعة.",
+"مبادرة «حياة كريمة» نفذت في قرى أشمون والشهداء وحدهما أكثر من 1600 مشروع خدمي وتنموي."
+];
+let fi=0;
+function showFact(){$("#factTxt").text(FACTS[fi]);fi=(fi+1)%FACTS.length}
+showFact();
+$("#fact").on("click",showFact);
+
+
+const Q=[
+["ما عاصمة محافظة المنوفية؟",["شبين الكوم","منوف","السادات"],0],
+["أي مدينة بالمنوفية صناعية وسكنية وزراعية وسياحية؟",["قويسنا","السادات","الباجور"],1],
+["كم مليار جنيه تقريبًا خصصتها الدولة استثمارات عامة للمحافظة في العامين 2025/2026 و2026/2027؟",["5","18","50"],1],
+["أين تقع جامعة السادات؟",["شبين الكوم","منوف","مدينة السادات"],2],
+["أي مشروع من هذه ضمن خطة المواطن الاستثمارية للمنوفية؟",["بناء مطار دولي","توصيل شبكة الغاز الطبيعي","إنشاء مترو أنفاق"],1],
+["كم مشروعًا ضمتها خطة المحافظة للعام 2025/2026 بحسب المحافظ؟",["30","130","500"],1],
+["ما المحصول الذي تعتمد عليه غالبية الأراضي الزراعية بالمنوفية؟",["القطن","الذرة","الأرز"],1],
+["في أي قرية بالمنوفية وُلد الرئيس الراحل محمد أنور السادات؟",["ميت أبو الكوم","كفر داود","بركة السبع"],0]
+];
+const qe=document.getElementById("q");let qi=0,sc=0;
+function ask(){
+ if(qi>=Q.length){
+  qe.innerHTML='<p class="score"></p><br><button class="btn">أعد الاختبار</button>';
+  qe.firstChild.textContent="نتيجتك: "+sc+" من "+Q.length;
+  qe.lastChild.onclick=()=>{qi=0;sc=0;ask()};return;}
+ const [t,o,a]=Q[qi];
+ qe.innerHTML='<p></p><div class="opts"></div><p class="fb" aria-live="polite"></p>';
+ qe.firstChild.textContent="("+(qi+1)+"/"+Q.length+") "+t;
+ const box=qe.children[1],fb=qe.lastChild;
+ o.forEach((x,i)=>{const b=document.createElement("button");b.textContent=x;
+  b.onclick=()=>{
+   [...box.children].forEach(c=>c.disabled=true);
+   box.children[a].className="ok";
+   if(i===a){sc++;fb.textContent="إجابة صحيحة!"}else{b.className="no";fb.textContent="الإجابة الصحيحة: "+o[a]}
+   const nx=document.createElement("button");nx.className="btn";nx.style.marginTop="8px";nx.textContent=qi+1<Q.length?"السؤال التالي":"شاهد النتيجة";
+   nx.onclick=()=>{qi++;ask()};qe.appendChild(nx);nx.focus();
+  };box.appendChild(b)});
+}
+ask();
+
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function count(e){const to=+e.dataset.to;if(still){e.textContent=to;return}
+ let s=null;const f=t=>{s=s||t;const p=Math.min((t-s)/1400,1);e.textContent=Math.round(p*to);if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+document.documentElement.classList.add("js");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-to]").forEach(count);io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll(".about-grid,.stats,.index-list,.card,.info-card,.hero .wrap").forEach(e=>{e.classList.add("rv");io.observe(e)});
+
+document.querySelectorAll(".stamp,.entry,.card,.info-card").forEach((e,i)=>{
+ e.classList.add("float");
+ e.style.animationDelay=(i%6)*.35+"s";
+ e.style.animationDuration=(4.4+(i%5)*.4)+"s";
+});
+</script>
+</body>
+</html>
