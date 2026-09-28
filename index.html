@@ -27,7 +27,6 @@ a{color:inherit}button{font:inherit;color:inherit}
 .tag:before{content:"";width:24px;height:2px;background:var(--gold)}
 .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
-/* زجاج (Glassmorphism) */
 .glass{position:relative;overflow:hidden;border-radius:22px;background:var(--glass);
  -webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);
  border:1px solid rgba(255,255,255,.85);box-shadow:0 12px 32px -20px #12281F66,inset 0 1px 0 #fff;
@@ -38,7 +37,6 @@ a{color:inherit}button{font:inherit;color:inherit}
 @media(hover:hover){.glass:hover{transform:translateY(-4px);box-shadow:0 22px 40px -22px #12281F77,inset 0 1px 0 #fff}.glass:hover:after{opacity:1}}
 .glass>*{position:relative;z-index:1}
 
-/* الأزرار */
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;font-weight:800;padding:12px 26px;border-radius:999px;
  text-decoration:none;border:0;cursor:pointer;transition:background .25s,box-shadow .25s;translate:var(--tx,0) var(--ty,0);position:relative;overflow:hidden}
 .btn:hover{background:var(--field);box-shadow:0 12px 24px -12px var(--field)}
@@ -47,7 +45,6 @@ a{color:inherit}button{font:inherit;color:inherit}
 .btn:disabled{opacity:.35;cursor:default}
 @keyframes sweep{to{left:140%}}
 
-/* القائمة العلوية */
 nav{position:fixed;inset-inline:0;top:0;z-index:20;padding:14px 0;transition:background .35s,box-shadow .35s,padding .35s}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px}
 nav b{font-weight:900;font-size:1.08rem;white-space:nowrap}
@@ -62,7 +59,6 @@ nav.solid{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(18px) sa
  opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
 #top.show{opacity:1;pointer-events:auto}#top:hover{transform:translateY(-3px)}
 
-/* الواجهة الرئيسية */
 .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:90px 0 150px}
 .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38;will-change:transform}
 .b1{width:340px;height:340px;background:var(--nile);left:60%;top:6%}
@@ -101,7 +97,6 @@ section{padding:76px 0;position:relative}
 .icb{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#2E7D4F18;color:var(--field);margin-bottom:10px;padding:10px;transition:transform .35s}
 @media(hover:hover){.glass:hover .icb{transform:rotate(-8deg) scale(1.1)}}
 
-/* رحلة الإنجاز */
 .stepper{position:relative;display:flex;overflow-x:auto;scrollbar-width:none;padding:6px 0 16px;scroll-snap-type:x proximity}
 .stepper::-webkit-scrollbar{display:none}
 .step{flex:1 0 116px;min-width:0;position:relative;background:none;border:0;cursor:pointer;text-align:center;padding:0 6px;color:var(--ink2);font-weight:800;font-size:.85rem;line-height:1.5;scroll-snap-align:center}
@@ -125,7 +120,6 @@ section{padding:76px 0;position:relative}
 @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}}
 .nav2{display:flex;justify-content:space-between;margin-top:18px;gap:10px}
 
-/* التعليم */
 .quote{padding:22px 26px;border-inline-start:5px solid var(--gold);font-weight:800;font-size:1.1rem}
 .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .chip{display:flex;align-items:center;gap:10px;padding:12px 16px;font-weight:800}
@@ -134,7 +128,6 @@ section{padding:76px 0;position:relative}
 .list li{position:relative;padding-inline-start:26px;margin:8px 0;color:var(--ink2)}
 .list li:before{content:"";position:absolute;right:0;top:.7em;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #B4862A22}
 
-/* الصناعة */
 .ind{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;align-items:stretch}
 .indart{display:grid;place-items:center;padding:14px;min-height:260px}
 .indart svg{width:100%;max-width:440px}
@@ -143,7 +136,6 @@ section{padding:76px 0;position:relative}
 .ph{border:2px dashed var(--gold);background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
 .ph b{color:var(--gold)}
 
-/* الإحصائيات */
 .stat .num{font-weight:900;font-size:clamp(2.1rem,6.5vw,2.8rem);line-height:1.2}
 .stat .unit{font-weight:800;color:var(--gold);margin-inline-start:6px}
 .stat p{color:var(--ink2);margin-top:8px;font-size:.96rem;line-height:1.8}
@@ -154,7 +146,6 @@ section{padding:76px 0;position:relative}
 .crow .bar{margin:0;height:14px;border-radius:7px}
 .crow em{font-family:Cairo;font-style:normal;color:var(--ink)}
 
-/* الدليل */
 .tools{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
 @media(min-width:900px){.tools{flex-direction:row;align-items:center}#srch{max-width:380px}}
 #srch{width:100%;padding:13px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.9);background:var(--glass2);font:inherit;font-weight:800;color:var(--ink)}
@@ -165,7 +156,6 @@ section{padding:76px 0;position:relative}
 .fc.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .count{color:var(--ink2);font-weight:800;margin-bottom:10px;font-size:.92rem}
 
-/* الخريطة */
 .map{position:relative;height:clamp(340px,42vw,500px);padding:0}
 .map svg.lines{position:absolute;inset:0;width:100%;height:100%}
 .map line{stroke:var(--nile);stroke-width:1;opacity:.35;vector-effect:non-scaling-stroke;stroke-dasharray:4 6;animation:flow 1.6s linear infinite}
@@ -190,7 +180,6 @@ footer .flinks a:hover{color:var(--gold)}
 footer p.src{color:#EDEBE299;font-size:.9rem;line-height:1.8}
 footer .bottom{border-top:1px solid #ffffff1c;padding-top:16px;color:#EDEBE288;font-size:.85rem}
 
-/* ظهور تدريجي بأشكال مختلفة لكل قسم */
 .rv{opacity:0;transform:translateY(28px);filter:blur(4px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1),filter .8s}
 .stg.zoom>.rv{transform:scale(.92)}
 .stg.side>.rv:nth-child(odd){transform:translateX(40px)}
@@ -277,7 +266,14 @@ footer .bottom{border-top:1px solid #ffffff1c;padding-top:16px;color:#EDEBE288;f
   <div class="glass pad"><b>العاصمة</b><span>مدينة شبين الكوم</span></div>
   <div class="glass pad"><b>الموقع</b><span>قلب الدلتا، بين فرعي النيل دمياط ورشيد</span></div>
   <div class="glass pad"><b>أبرز مدنها</b><span>شبين الكوم، منوف، أشمون، قويسنا، الباجور، مدينة السادات</span></div>
-  <div class="glass pad"><b>من أبنائها</b><span>الرئيس الراحل محمد أنور السادات، وباسمه سُمّيت مدينة السادات</span></div>
+  <div class="glass pad" style="grid-column:span 2">
+   <b>من أبناء المحافظة</b>
+   <ul class="list" style="margin-top:6px">
+    <li>الرئيس الراحل محمد أنور السادات، من مواليد قرية ميت أبو الكوم، وباسمه سُمّيت مدينة السادات.</li>
+    <li>الرئيس الأسبق محمد حسني مبارك، من مواليد بلدة كفر المصيلحة بمركز شبين الكوم.</li>
+    <li>عدد كبير من الوزراء والمسؤولين وقيادات الشرطة والجيش من أبناء المحافظة عبر التاريخ.</li>
+   </ul>
+  </div>
   <div class="glass pad"><b>شعار المحافظة</b><span>ترس للصناعة تعلوه سنبلتان للزراعة، ولهب يرمز لثورة فلاحي دنشواي، وبرج حمام رمز قرية دنشواي</span></div>
   <div class="glass pad" id="fact" style="cursor:pointer" title="اضغط لمعلومة جديدة"><b>معلومة اليوم ↻</b><span id="factTxt"></span></div>
  </div>
@@ -410,11 +406,9 @@ footer .bottom{border-top:1px solid #ffffff1c;padding-top:16px;color:#EDEBE288;f
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
-/* هل المستخدم يفضّل تقليل الحركة؟ وهل جهازه بمؤشر (ماوس)؟ */
 const reduceMotion = matchMedia("(prefers-reduced-motion:reduce)").matches;
 const hasMouse = matchMedia("(hover:hover) and (pointer:fine)").matches;
 
-/* أيقونات SVG بسيطة */
 const P = {
   factory:'<path d="M3 21V11l5 3V11l5 3V8l8 4v9H3z"/><path d="M7 21v-4M12 21v-4M17 21v-4"/>',
   cap:'<path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/><path d="M22 9v6"/>',
@@ -430,92 +424,84 @@ const P = {
   sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
   users:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 15c3 0 6 1 6 5"/>'
 };
-function icon(name){ return '<span class="icb ic"><svg viewBox="0 0 24 24">' + P[name] + '</svg></span>'; }
+function icon(name) { return '<span class="icb ic"><svg viewBox="0 0 24 24">' + P[name] + '</svg></span>'; }
 
-/* المجالات (تظهر على الخريطة وفي الدليل) */
 const themes = [
-  {id:"industry",  name:"الصناعة",         icon:"factory",  x:50, y:16, title:"السادات: مدينة صناعية في قلب الدلتا"},
-  {id:"education", name:"التعليم",         icon:"cap",      x:17, y:36, title:"جامعتان قريبتان من أبناء المحافظة"},
-  {id:"ahlia",     name:"الجامعة الأهلية", icon:"hospital", x:12, y:58, title:"جامعة المنوفية الأهلية بطوخ تنبيشة"},
-  {id:"services",  name:"الخدمات",         icon:"service",  x:83, y:36, title:"خطط المحافظة والمواطن"},
-  {id:"village",   name:"حياة كريمة",      icon:"village",  x:50, y:50, title:"تطوير القرى ضمن المبادرة الرئاسية"},
-  {id:"housing",   name:"الإسكان",         icon:"home",     x:33, y:72, title:"بيوت جديدة في الفردوس والنور والكوثر"},
-  {id:"roads",     name:"الطرق",           icon:"road",     x:67, y:72, title:"طرق تربط المدن ببعضها"}
+  {id:"industry", name:"الصناعة", icon:"factory", x:50, y:16, title:"السادات: مدينة صناعية في قلب الدلتا"},
+  {id:"education", name:"التعليم", icon:"cap", x:17, y:36, title:"جامعتان قريبتان من أبناء المحافظة"},
+  {id:"ahlia", name:"الجامعة الأهلية", icon:"hospital", x:12, y:58, title:"جامعة المنوفية الأهلية بطوخ تنبيشة"},
+  {id:"services", name:"الخدمات", icon:"service", x:83, y:36, title:"خطط المحافظة والمواطن"},
+  {id:"village", name:"حياة كريمة", icon:"village", x:50, y:50, title:"تطوير القرى ضمن المبادرة الرئاسية"},
+  {id:"housing", name:"الإسكان", icon:"home", x:33, y:72, title:"بيوت جديدة في الفردوس والنور والكوثر"},
+  {id:"roads", name:"الطرق", icon:"road", x:67, y:72, title:"طرق تربط المدن ببعضها"}
 ];
 
-/* المعلومات: كل معلومة لها رقم (id) ومجال (th) ونص (t) — تُكتب مرة واحدة وتُستخدم في كل الأقسام */
 const facts = [
-  {id:"i1", th:"industry",  t:"مدينة السادات من المدن الأولى التي أنشأتها الدولة، وهي مدينة صناعية وسكنية وزراعية وسياحية."},
-  {id:"i2", th:"industry",  t:"نُفذت مرافق الطرق والمياه والصرف للمناطق الصناعية، ومنها المنطقة الصناعية الثامنة، لخدمة المصانع."},
-  {id:"i3", th:"industry",  t:"جرى رفع كفاءة الطرق داخل المناطق الصناعية لتسهيل حركة النقل والعمال."},
+  {id:"i1", th:"industry", t:"مدينة السادات من المدن الأولى التي أنشأتها الدولة، وهي مدينة صناعية وسكنية وزراعية وسياحية."},
+  {id:"i2", th:"industry", t:"نُفذت مرافق الطرق والمياه والصرف للمناطق الصناعية، ومنها المنطقة الصناعية الثامنة، لخدمة المصانع."},
+  {id:"i3", th:"industry", t:"جرى رفع كفاءة الطرق داخل المناطق الصناعية لتسهيل حركة النقل والعمال."},
   {id:"e1", th:"education", t:"جامعة المنوفية في شبين الكوم، وجامعة السادات في مدينة السادات."},
   {id:"e2", th:"education", t:"تتيح الجامعتان التعليم الجامعي لأبناء المحافظة بالقرب من بيوتهم."},
   {id:"e3", th:"education", t:"جرى العمل على إنشاء مبانٍ وفصول لكليات بجامعة السادات، مثل الصيدلة وطب الأسنان والحقوق."},
-  {id:"u1", th:"ahlia",     t:"أُنشئت جامعة المنوفية الأهلية على طريق مصر - إسكندرية الزراعي بمركز بركة السبع (طوخ تنبيشة)، وتضم كليات منها الطب البشري وطب الأسنان والصيدلة والهندسة."},
-  {id:"u2", th:"ahlia",     t:"يُقام مشروع مستشفى وكلية الطب الجديدة بالجامعة على مساحة كبيرة تقارب 500 فدان، بحسب ما تعلنه الجهات المسؤولة عن المشروع."},
-  {id:"u3", th:"ahlia",     t:"يستهدف المشروع خدمة عدد كبير من أبناء المنوفية والمحافظات المجاورة بخدمات طبية وتعليمية متكاملة."},
-  {id:"s1", th:"services",  t:"ضمت خطة المحافظة للعام 2025/2026 نحو 130 مشروعًا في النقل والطرق وتحسين البيئة والخدمات المحلية والتنمية الاقتصادية والتنمية الحضرية والريفية."},
-  {id:"s2", th:"services",  t:"تتضمن خطة المواطن الاستثمارية للمحافظة توصيل شبكة الغاز الطبيعي وإنشاء مجمعات خدمات زراعية."},
-  {id:"s3", th:"services",  t:"وتشمل تأهيل الترع وتبطينها، وأبراج شبكات المحمول، وتوصيل الألياف الضوئية للإنترنت."},
-  {id:"v1", th:"village",   t:"بلغ عدد المشروعات 1606 مشروعات بقرى مركزي أشمون والشهداء، وتجاوزت نسبة التنفيذ 85% حتى نوفمبر 2023."},
-  {id:"v2", th:"village",   t:"شملت المشروعات مياه الشرب والصرف الصحي والتعليم؛ ففي 2022 أُعلن عن 150 مشروعًا لمياه الشرب و104 للصرف الصحي و118 للتعليم."},
-  {id:"v3", th:"village",   t:"وأُعلن عن إنشاء وتجديد 12 وحدة صحية و37 مدرسة بمدينة الشهداء."},
-  {id:"h1", th:"housing",   t:"تنفذ الدولة في مدينة السادات أحياء للإسكان الاجتماعي، منها الفردوس والنور والكوثر."},
-  {id:"h2", th:"housing",   t:"تدخل هذه الوحدات ضمن مبادرة «سكن لكل المصريين» لمحدودي الدخل."},
-  {id:"h3", th:"housing",   t:"تُجهَّز الأحياء بشبكات الطرق والمياه والصرف حتى تصبح صالحة للسكن."},
-  {id:"r1", th:"roads",     t:"شهد الطريق الإقليمي بين كفر داود والسادات أعمال صيانة ورصف نفذتها الهيئة العامة للطرق والكباري."},
-  {id:"r2", th:"roads",     t:"أكد المحافظ حرص المحافظة على إقامة محاور مرورية جديدة ورصف الطرق الرئيسية والداخلية ورفع كفاءتها."},
-  {id:"r3", th:"roads",     t:"تتابع الوحدات المحلية رصف الشوارع الداخلية وتوسعتها في مدن المحافظة وقراها."}
+  {id:"u1", th:"ahlia", t:"أُنشئت جامعة المنوفية الأهلية على طريق مصر - إسكندرية الزراعي بمركز بركة السبع (طوخ تنبيشة)، وتضم كليات منها الطب البشري وطب الأسنان والصيدلة والهندسة."},
+  {id:"u2", th:"ahlia", t:"يُقام مشروع مستشفى وكلية الطب الجديدة بالجامعة على مساحة كبيرة تقارب 500 فدان، بحسب ما تعلنه الجهات المسؤولة عن المشروع."},
+  {id:"u3", th:"ahlia", t:"يستهدف المشروع خدمة عدد كبير من أبناء المنوفية والمحافظات المجاورة بخدمات طبية وتعليمية متكاملة."},
+  {id:"s1", th:"services", t:"ضمت خطة المحافظة للعام 2025/2026 نحو 130 مشروعًا في النقل والطرق وتحسين البيئة والخدمات المحلية والتنمية الاقتصادية والتنمية الحضرية والريفية."},
+  {id:"s2", th:"services", t:"تتضمن خطة المواطن الاستثمارية للمحافظة توصيل شبكة الغاز الطبيعي وإنشاء مجمعات خدمات زراعية."},
+  {id:"s3", th:"services", t:"وتشمل تأهيل الترع وتبطينها، وأبراج شبكات المحمول، وتوصيل الألياف الضوئية للإنترنت."},
+  {id:"v1", th:"village", t:"بلغ عدد المشروعات 1606 مشروعات بقرى مركزي أشمون والشهداء، وتجاوزت نسبة التنفيذ 85% حتى نوفمبر 2023."},
+  {id:"v2", th:"village", t:"شملت المشروعات مياه الشرب والصرف الصحي والتعليم؛ ففي 2022 أُعلن عن 150 مشروعًا لمياه الشرب و104 للصرف الصحي و118 للتعليم."},
+  {id:"v3", th:"village", t:"وأُعلن عن إنشاء وتجديد 12 وحدة صحية و37 مدرسة بمدينة الشهداء."},
+  {id:"h1", th:"housing", t:"تنفذ الدولة في مدينة السادات أحياء للإسكان الاجتماعي، منها الفردوس والنور والكوثر."},
+  {id:"h2", th:"housing", t:"تدخل هذه الوحدات ضمن مبادرة «سكن لكل المصريين» لمحدودي الدخل."},
+  {id:"h3", th:"housing", t:"تُجهَّز الأحياء بشبكات الطرق والمياه والصرف حتى تصبح صالحة للسكن."},
+  {id:"r1", th:"roads", t:"شهد الطريق الإقليمي بين كفر داود والسادات أعمال صيانة ورصف نفذتها الهيئة العامة للطرق والكباري."},
+  {id:"r2", th:"roads", t:"أكد المحافظ حرص المحافظة على إقامة محاور مرورية جديدة ورصف الطرق الرئيسية والداخلية ورفع كفاءتها."},
+  {id:"r3", th:"roads", t:"تتابع الوحدات المحلية رصف الشوارع الداخلية وتوسعتها في مدن المحافظة وقراها."}
 ];
 const factById = {}; facts.forEach(f => factById[f.id] = f);
 const themeById = {}; themes.forEach(t => themeById[t.id] = t);
 
-/* ========== 1) رحلة الإنجاز: ست مراحل، كل مرحلة تعرض معلومات من القائمة ========== */
 const stages = [
-  {name:"بداية الإنجازات",       ids:["i1","e1"]},
-  {name:"مرحلة التطوير",         ids:["i2","i3","r1"]},
-  {name:"مرحلة التوسع",          ids:["e3","h1","u1"]},
-  {name:"المشروعات والإنجازات",  ids:["v1","v2","v3"]},
-  {name:"الوضع الحالي",          ids:["s1","s2","s3"]},
-  {name:"المستقبل",              ids:["u2","u3","r2"]}
+  {name:"بداية الإنجازات", ids:["i1","e1"]},
+  {name:"مرحلة التطوير", ids:["i2","i3","r1"]},
+  {name:"مرحلة التوسع", ids:["e3","h1","u1"]},
+  {name:"المشروعات والإنجازات", ids:["v1","v2","v3"]},
+  {name:"الوضع الحالي", ids:["s1","s2","s3"]},
+  {name:"المستقبل", ids:["u2","u3","r2"]}
 ];
 let cur = 0;
 const $stepper = $("#stepper"), $stage = $("#stage");
 
-stages.forEach(function (st, i) {
+stages.forEach((st, i) => {
   const $b = $('<button class="step" role="tab"></button>').html('<span class="n">' + (i + 1) + '</span>' + st.name);
-  $b.on("click", function () { goStage(i); });
+  $b.on("click", () => goStage(i, true));
   $stepper.append($b);
 });
 
 function goStage(i, animate) {
   cur = Math.max(0, Math.min(stages.length - 1, i));
   const st = stages[cur];
-  // حالة الأزرار: المنتهية والحالية
-  $stepper.children().each(function (k) {
-    $(this).toggleClass("on", k === cur).toggleClass("done", k < cur).attr("aria-selected", k === cur);
+  $stepper.children().each((k, el) => {
+    $(el).toggleClass("on", k === cur).toggleClass("done", k < cur).attr("aria-selected", k === cur);
   });
-  // بناء لوحة المرحلة
   let html = '<div class="stagehead"><h3>' + (cur + 1) + '. ' + st.name + '</h3><small>' + st.ids.length + ' معلومات</small></div><div class="grid">';
-  st.ids.forEach(function (id, k) {
+  st.ids.forEach((id, k) => {
     const f = factById[id], th = themeById[f.th];
     html += '<div class="fcard" style="animation-delay:' + (k * 0.09) + 's">' + icon(th.icon) + '<div><small>' + th.name + '</small><p>' + f.t + '</p></div></div>';
   });
   html += '</div><div class="nav2"><button class="btn sm" id="pv"' + (cur === 0 ? ' disabled' : '') + '>← السابق</button>' +
           '<button class="btn sm" id="nx"' + (cur === stages.length - 1 ? ' disabled' : '') + '>التالي →</button></div>';
   $stage.html(html);
-  $("#pv").on("click", function () { goStage(cur - 1, true); });
-  $("#nx").on("click", function () { goStage(cur + 1, true); });
-  // تحريك اللوحة عند الانتقال
+  $("#pv").on("click", () => goStage(cur - 1, true));
+  $("#nx").on("click", () => goStage(cur + 1, true));
   if (animate) { $stage.removeClass("swap"); void $stage[0].offsetWidth; $stage.addClass("swap"); }
-  // تمرير الشريط أفقيًا ليظهر الزر الحالي (داخل الشريط فقط بدون تحريك الصفحة)
   const btn = $stepper.children()[cur], box = $stepper[0];
   box.scrollTo({left: btn.offsetLeft - box.clientWidth / 2 + btn.clientWidth / 2, behavior: reduceMotion ? "auto" : "smooth"});
 }
 goStage(0);
 
-/* التنقل بلوحة المفاتيح بين المراحل: السهم يسار = التالي، يمين = السابق (اتجاه عربي) */
-$stepper.on("keydown", function (e) {
+$stepper.on("keydown", e => {
   const map = {ArrowLeft: cur + 1, ArrowRight: cur - 1, Home: 0, End: stages.length - 1};
   if (!(e.key in map)) return;
   e.preventDefault();
@@ -523,63 +509,53 @@ $stepper.on("keydown", function (e) {
   $stepper.children().eq(cur).trigger("focus");
 });
 
-/* ========== 2) التعليم العالي والمدارس ========== */
 const higher = [
-  {icon:"users",    t:"زيادة فرص التعليم الجامعي",   p:"وجود الجامعات وتطويرها داخل المنوفية يتيح فرصًا أكبر لأبناء المحافظة للتعليم الجامعي بالقرب من محل إقامتهم، ومنها جامعة المنوفية بشبين الكوم وجامعة السادات."},
-  {icon:"cap",      t:"تطوير منظومة التعليم العالي", p:"جرى العمل على إنشاء مبانٍ وفصول لكليات بجامعة السادات، مثل الصيدلة وطب الأسنان والحقوق."},
-  {icon:"service",  t:"كليات وأقسام جديدة",          p:"فتح أقسام وكليات جديدة، مثل طب الأسنان والعلاج الطبيعي، لزيادة تنوع التخصصات داخل المحافظة والمساهمة في تقليل اغتراب الطلاب للدراسة في محافظات أخرى."},
-  {icon:"hospital", t:"إنشاء وتطوير الجامعة الأهلية",p:"توفر جامعة المنوفية الأهلية فرصًا تعليمية لفئات مختلفة من الطلاب داخل المحافظة، وتضم كليات منها الطب البشري وطب الأسنان والصيدلة والهندسة."}
+  {icon:"users", t:"زيادة فرص التعليم الجامعي", p:"وجود الجامعات وتطويرها داخل المنوفية يتيح فرصًا أكبر لأبناء المحافظة للتعليم الجامعي بالقرب من محل إقامتهم، ومنها جامعة المنوفية بشبين الكوم وجامعة السادات."},
+  {icon:"cap", t:"تطوير منظومة التعليم العالي", p:"جرى العمل على إنشاء مبانٍ وفصول لكليات بجامعة السادات، مثل الصيدلة وطب الأسنان والحقوق."},
+  {icon:"service", t:"كليات وأقسام جديدة", p:"فتح أقسام وكليات جديدة، مثل طب الأسنان والعلاج الطبيعي، لزيادة تنوع التخصصات داخل المحافظة والمساهمة في تقليل اغتراب الطلاب للدراسة في محافظات أخرى."},
+  {icon:"hospital", t:"إنشاء وتطوير الجامعة الأهلية", p:"توفر جامعة المنوفية الأهلية فرصًا تعليمية لفئات مختلفة من الطلاب داخل المحافظة، وتضم كليات منها الطب البشري وطب الأسنان والصيدلة والهندسة."}
 ];
-higher.forEach(function (h) {
-  $("#higher").append('<div class="glass pad">' + icon(h.icon) + '<b>' + h.t + '</b><p>' + h.p + '</p></div>');
-});
-const schools = [["school","المدارس الحكومية"],["book","مدارس اللغات"],["cap","المدارس الرسمية للغات"],["sun","المدارس اليابانية"],["atom","مدارس STEM"],["globe","المدارس الدولية (IB)"]];
-schools.forEach(function (s) {
-  $("#schools").append('<div class="glass chip">' + icon(s[0]) + '<span>' + s[1] + '</span></div>');
-});
+higher.forEach(h => $("#higher").append('<div class="glass pad">' + icon(h.icon) + '<b>' + h.t + '</b><p>' + h.p + '</p></div>'));
 
-/* ========== 3) دليل الإنجازات: بحث + تصفية ========== */
+const schools = [["school","المدارس الحكومية"],["book","مدارس اللغات"],["cap","المدارس الرسمية للغات"],["sun","المدارس اليابانية"],["atom","مدارس STEM"],["globe","المدارس الدولية (IB)"]];
+schools.forEach(s => $("#schools").append('<div class="glass chip">' + icon(s[0]) + '<span>' + s[1] + '</span></div>'));
+
 let activeTheme = "all";
 const $fchips = $("#fchips"), $results = $("#results"), $cnt = $("#cnt");
-[{id:"all", name:"الكل"}].concat(themes).forEach(function (t) {
+[{id:"all", name:"الكل"}].concat(themes).forEach(t => {
   const $c = $('<button class="fc"></button>').text(t.name).toggleClass("on", t.id === "all");
-  $c.on("click", function () { activeTheme = t.id; $fchips.children().removeClass("on"); $c.addClass("on"); renderFinder(); });
+  $c.on("click", () => { activeTheme = t.id; $fchips.children().removeClass("on"); $c.addClass("on"); renderFinder(); });
   $fchips.append($c);
 });
 function renderFinder() {
   const q = $("#srch").val().trim();
-  const list = facts.filter(function (f) {
-    return (activeTheme === "all" || f.th === activeTheme) && (q === "" || (f.t + themeById[f.th].name).indexOf(q) > -1);
-  });
+  const list = facts.filter(f => (activeTheme === "all" || f.th === activeTheme) && (q === "" || (f.t + themeById[f.th].name).indexOf(q) > -1));
   $cnt.text(list.length ? "عدد النتائج: " + list.length : "لا توجد نتائج مطابقة، جرّب كلمة أخرى.");
   $results.empty();
-  list.forEach(function (f, k) {
+  list.forEach((f, k) => {
     const th = themeById[f.th];
-    $results.append('<div class="glass pad fcardx" style="animation:pop .5s both;animation-delay:' + Math.min(k, 8) * 0.04 + 's">' +
-      icon(th.icon) + '<b>' + th.name + '</b><p>' + f.t + '</p></div>');
+    $results.append('<div class="glass pad fcardx" style="animation:pop .5s both;animation-delay:' + Math.min(k, 8) * 0.04 + 's">' + icon(th.icon) + '<b>' + th.name + '</b><p>' + f.t + '</p></div>');
   });
 }
 $("#srch").on("input", renderFinder);
 renderFinder();
 
-/* ========== 4) الخريطة ========== */
 const $mp = $("#mp"), $pn = $("#pn");
 function showTheme(i) {
   const th = themes[i];
   $mp.find(".node").attr("aria-pressed", false).eq(i).attr("aria-pressed", true);
   let html = '<h3>' + th.title + '</h3><ul class="list" style="margin-top:8px">';
-  facts.filter(function (f) { return f.th === th.id; }).forEach(function (f) { html += '<li>' + f.t + '</li>'; });
+  facts.filter(f => f.th === th.id).forEach(f => html += '<li>' + f.t + '</li>');
   $pn.html(html + '</ul>');
 }
-themes.forEach(function (th, i) {
+themes.forEach((th, i) => {
   const $n = $('<button class="node"></button>').css({left: th.x + "%", top: th.y + "%"}).attr({"aria-pressed": "false", title: th.title});
   $n.html("<i></i>").append(document.createTextNode(th.name));
-  $n.on("click mouseenter", function () { showTheme(i); });
+  $n.on("click mouseenter", () => showTheme(i));
   $mp.append($n);
 });
 showTheme(4);
 
-/* ========== 5) معلومة اليوم ========== */
 const funFacts = [
   "غالبية الأراضي الزراعية بالمنوفية تعتمد على زراعة محصول الذرة، بحسب وكيل وزارة الزراعة بالمحافظة.",
   "تقع المنوفية بين فرعي النيل دمياط ورشيد، في قلب أراضي الدلتا الخصبة.",
@@ -587,27 +563,27 @@ const funFacts = [
   "جامعة المنوفية بشبين الكوم وجامعة السادات بمدينة السادات تخدمان أبناء المحافظة بكلياتهما المتنوعة.",
   "مبادرة «حياة كريمة» نفذت في قرى أشمون والشهداء وحدهما أكثر من 1600 مشروع خدمي وتنموي.",
   "شعار محافظة المنوفية ترس يرمز للصناعة تعلوه سنبلتان ترمزان للزراعة والنماء، ولهب يرمز لثورة الفلاحين بدنشواي.",
-  "جامعة المنوفية الأهلية بطوخ تنبيشة (مركز بركة السبع) تضم كلية للطب البشري، ويُقام بها مشروع مستشفى وكلية طب جديدة على مساحة تقارب 500 فدان."
+  "جامعة المنوفية الأهلية بطوخ تنبيشة (مركز بركة السبع) تضم كلية للطب البشري، ويُقام بها مشروع مستشفى وكلية طب جديدة على مساحة تقارب 500 فدان.",
+  "وُلد الرئيس الأسبق محمد حسني مبارك في بلدة كفر المصيلحة بمركز شبين الكوم بمحافظة المنوفية."
 ];
 let fi = 0;
 function nextFact() { $("#factTxt").text(funFacts[fi]); fi = (fi + 1) % funFacts.length; }
 nextFact();
 $("#fact").on("click", nextFact);
 
-/* ========== 6) القائمة العلوية وزر العودة والحركة عند التمرير ========== */
 const $nav = $("#nav"), $links = $("#links"), $topBtn = $("#top");
 $("#mnav").on("click", function () { const o = $links.toggleClass("open").hasClass("open"); $(this).attr("aria-expanded", o); });
-$links.find("a").on("click", function () { $links.removeClass("open"); });
-const secs = ["about","journey","education","industry","stats","finder","map"].map(function (id) { return document.getElementById(id); });
+$links.find("a").on("click", () => $links.removeClass("open"));
+const secs = ["about","journey","education","industry","stats","finder","map"].map(id => document.getElementById(id));
 const sky = document.getElementById("sky");
 function onScroll() {
   const y = scrollY;
   $nav.toggleClass("solid", y > 40);
   $topBtn.toggleClass("show", y > 600);
   let curId = "";
-  secs.forEach(function (s) { if (s && y >= s.offsetTop - 150) curId = s.id; });
+  secs.forEach(s => { if (s && y >= s.offsetTop - 150) curId = s.id; });
   $links.find("a").removeClass("on").filter('[data-s="' + curId + '"]').addClass("on");
-  if (!reduceMotion && y < 1200) {   // بارالاكس خفيف: تحريك بـ transform فقط
+  if (!reduceMotion && y < 1200) {
     $(".b1").css("transform", "translateY(" + y * 0.15 + "px)");
     $(".b2").css("transform", "translateY(" + (-y * 0.1) + "px)");
     sky.style.transform = "translateY(" + y * 0.08 + "px)";
@@ -615,11 +591,10 @@ function onScroll() {
 }
 addEventListener("scroll", onScroll, {passive: true});
 onScroll();
-$topBtn.on("click", function () { scrollTo({top: 0, behavior: reduceMotion ? "auto" : "smooth"}); });
+$topBtn.on("click", () => scrollTo({top: 0, behavior: reduceMotion ? "auto" : "smooth"}));
 
-/* ========== 7) ظهور العناصر والعدادات والأشرطة ========== */
-document.querySelectorAll(".stg").forEach(function (g) {
-  Array.prototype.forEach.call(g.children, function (c, i) { c.classList.add("rv"); c.style.setProperty("--i", i); });
+document.querySelectorAll(".stg").forEach(g => {
+  Array.prototype.forEach.call(g.children, (c, i) => { c.classList.add("rv"); c.style.setProperty("--i", i); });
 });
 function animateCounter(el) {
   const to = +$(el).data("to");
@@ -628,34 +603,33 @@ function animateCounter(el) {
   function step(t) { t0 = t0 || t; const p = Math.min((t - t0) / 1300, 1); $(el).text(Math.round(p * to)); if (p < 1) requestAnimationFrame(step); }
   requestAnimationFrame(step);
 }
-const io = new IntersectionObserver(function (entries) {
-  entries.forEach(function (en) {
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
     if (!en.isIntersecting) return;
     en.target.classList.add("in");
-    $(en.target).find("[data-to]").addBack("[data-to]").each(function (_, el) { animateCounter(el); });
-    $(en.target).find(".bar i").each(function (_, el) { $(el).css("width", $(el).data("w") + "%"); });
+    $(en.target).find("[data-to]").addBack("[data-to]").each((_, el) => animateCounter(el));
+    $(en.target).find(".bar i").each((_, el) => $(el).css("width", $(el).data("w") + "%"));
     io.unobserve(en.target);
   });
 }, {threshold: 0.15});
-document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
 
-/* ========== 8) تفاعل المؤشر: إضاءة الزجاج وأزرار مغناطيسية (للأجهزة بماوس فقط) ========== */
 if (hasMouse && !reduceMotion) {
-  document.addEventListener("pointermove", function (e) {
+  document.addEventListener("pointermove", e => {
     const g = e.target.closest && e.target.closest(".glass");
     if (g) { const r = g.getBoundingClientRect(); g.style.setProperty("--mx", (e.clientX - r.left) + "px"); g.style.setProperty("--my", (e.clientY - r.top) + "px"); }
     const b = e.target.closest && e.target.closest(".btn");
     if (b) { const r = b.getBoundingClientRect(); b.style.setProperty("--tx", (e.clientX - r.left - r.width / 2) * 0.15 + "px"); b.style.setProperty("--ty", (e.clientY - r.top - r.height / 2) * 0.25 + "px"); }
   });
-  document.addEventListener("pointerout", function (e) {
+  document.addEventListener("pointerout", e => {
     const b = e.target.closest && e.target.closest(".btn");
     if (b) { b.style.setProperty("--tx", "0px"); b.style.setProperty("--ty", "0px"); }
   });
 }
 
-/* ========== 9) دخول الواجهة الرئيسية عند التحميل ========== */
-$(".hin").each(function () { const el = this; setTimeout(function () { el.classList.add("go"); }, reduceMotion ? 0 : 80); });
+$(".hin").each(function () { const el = this; setTimeout(() => el.classList.add("go"), reduceMotion ? 0 : 80); });
 $("#egmap").addClass("in");
+
 </script>
 </body>
 </html>
