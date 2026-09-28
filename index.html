@@ -9,7 +9,7 @@
 :root{
  --ink:#12281F;--ink2:#4E6459;--nile:#1E6E8C;--field:#2E7D4F;--gold:#B4862A;--line:#12281F1F;
  --glass:rgba(255,255,255,.58);--glass2:rgba(255,255,255,.82);
- --s1:1.05rem;--s2:1.65rem;--s3:clamp(2.6rem,9vw,4.6rem)
+ --s1:1.05rem;--s2:1.65rem;--s3:clamp(2.6rem,8vw,5.6rem)
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
@@ -20,7 +20,9 @@ h1,h2,h3{font-weight:900;letter-spacing:-.01em}
 em{font-family:Amiri,serif;font-style:italic;color:var(--field)}
 a{color:inherit}button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.wrap{max-width:980px;margin:auto;padding:0 22px}
+.wrap{max-width:1180px;margin:auto;padding:0 clamp(18px,4vw,44px)}
+@media(min-width:1500px){html{font-size:17.5px}.wrap{max-width:1300px}}
+@media(min-width:1100px) and (max-width:1499px){html{font-size:16.5px}}
 .tag{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.8rem;letter-spacing:.14em;color:var(--nile)}
 .tag:before{content:"";width:24px;height:2px;background:var(--gold)}
 .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -33,8 +35,7 @@ a{color:inherit}button{font:inherit;color:inherit}
 @supports not (backdrop-filter:blur(1px)){.glass{background:var(--glass2)}}
 .glass:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.75),transparent 60%)}
-.glass:hover{transform:translateY(-4px);box-shadow:0 22px 40px -22px #12281F77,inset 0 1px 0 #fff}
-.glass:hover:after{opacity:1}
+@media(hover:hover){.glass:hover{transform:translateY(-4px);box-shadow:0 22px 40px -22px #12281F77,inset 0 1px 0 #fff}.glass:hover:after{opacity:1}}
 .glass>*{position:relative;z-index:1}
 
 /* الأزرار */
@@ -42,7 +43,7 @@ a{color:inherit}button{font:inherit;color:inherit}
  text-decoration:none;border:0;cursor:pointer;transition:background .25s,box-shadow .25s;translate:var(--tx,0) var(--ty,0);position:relative;overflow:hidden}
 .btn:hover{background:var(--field);box-shadow:0 12px 24px -12px var(--field)}
 .btn:after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sweep 4s infinite}
-.btn.sm{padding:8px 20px;font-size:.92rem}
+.btn.sm{padding:9px 22px;font-size:.92rem;min-height:42px}
 .btn:disabled{opacity:.35;cursor:default}
 @keyframes sweep{to{left:140%}}
 
@@ -62,17 +63,17 @@ nav.solid{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(18px) sa
 #top.show{opacity:1;pointer-events:auto}#top:hover{transform:translateY(-3px)}
 
 /* الواجهة الرئيسية */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:90px 0 150px}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:90px 0 150px}
 .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38;will-change:transform}
 .b1{width:340px;height:340px;background:var(--nile);left:60%;top:6%}
 .b2{width:260px;height:260px;background:var(--field);left:2%;bottom:14%}
 .fl{position:absolute;border-radius:50%;background:var(--gold);opacity:.5;animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{50%{transform:translateY(-18px)}}
-.sky{position:absolute;inset-inline:0;bottom:-2px;width:100%;height:190px;will-change:transform}
+.sky{position:absolute;inset-inline:0;bottom:-2px;width:100%;height:clamp(150px,18vw,280px);will-change:transform}
 .smk{fill:#12281F;opacity:0;animation:smoke 5s ease-out infinite;transform-box:fill-box;transform-origin:center}
 .smk:nth-of-type(2){animation-delay:1.6s}.smk:nth-of-type(3){animation-delay:3.2s}
 @keyframes smoke{0%{opacity:.28;transform:translateY(0) scale(.6)}100%{opacity:0;transform:translateY(-44px) scale(1.7)}}
-.eg{position:absolute;left:4%;top:46%;transform:translateY(-50%);width:min(34vw,270px);opacity:0}
+.eg{position:absolute;left:5%;top:46%;transform:translateY(-50%);width:min(30vw,380px);opacity:0}
 .eg.in{animation:egyIn 1.1s cubic-bezier(.2,.8,.2,1) .5s forwards}
 @keyframes egyIn{from{opacity:0;transform:translateY(-50%) scale(.9)}to{opacity:1;transform:translateY(-50%) scale(1)}}
 .eg path{fill:none;stroke:var(--ink);stroke-width:1.4;opacity:.3}
@@ -86,7 +87,7 @@ nav.solid{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(18px) sa
 .byline{font-weight:800;color:var(--ink2);margin:16px 0 4px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.93rem}
 .byline .dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
 h1{font-size:var(--s3);line-height:1.15;margin-top:10px}
-.hero p.lede{max-width:32em;color:var(--ink2);margin:16px 0 28px;font-size:1.14rem;line-height:1.85}
+.hero p.lede{max-width:34em;color:var(--ink2);margin:16px 0 28px;font-size:1.14rem;line-height:1.85}
 
 section{padding:76px 0;position:relative}
 .head{margin-bottom:30px}
@@ -98,19 +99,20 @@ section{padding:76px 0;position:relative}
 .pad b{display:block;font-weight:800;color:var(--nile);margin-bottom:2px}
 .pad span,.pad p{color:var(--ink2)}
 .icb{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#2E7D4F18;color:var(--field);margin-bottom:10px;padding:10px;transition:transform .35s}
-.glass:hover .icb{transform:rotate(-8deg) scale(1.1)}
+@media(hover:hover){.glass:hover .icb{transform:rotate(-8deg) scale(1.1)}}
 
 /* رحلة الإنجاز */
 .stepper{position:relative;display:flex;overflow-x:auto;scrollbar-width:none;padding:6px 0 16px;scroll-snap-type:x proximity}
 .stepper::-webkit-scrollbar{display:none}
-.step{flex:1 0 116px;position:relative;background:none;border:0;cursor:pointer;text-align:center;padding:0 6px;color:var(--ink2);font-weight:800;font-size:.85rem;line-height:1.5;scroll-snap-align:center}
-.step .n{width:40px;height:40px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;background:var(--glass2);border:2px solid var(--line);position:relative;z-index:1;transition:transform .35s,background .35s,border-color .35s,box-shadow .35s}
-.step:not(:last-child):after{content:"";position:absolute;top:19px;right:50%;width:100%;height:3px;background:var(--line);border-radius:2px;transition:background .5s}
+.step{flex:1 0 116px;min-width:0;position:relative;background:none;border:0;cursor:pointer;text-align:center;padding:0 6px;color:var(--ink2);font-weight:800;font-size:.85rem;line-height:1.5;scroll-snap-align:center}
+.step .n{width:42px;height:42px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;background:var(--glass2);border:2px solid var(--line);position:relative;z-index:1;transition:transform .35s,background .35s,border-color .35s,box-shadow .35s}
+.step:not(:last-child):after{content:"";position:absolute;top:20px;right:50%;width:100%;height:3px;background:var(--line);border-radius:2px;transition:background .5s}
 .step.done:after{background:linear-gradient(90deg,var(--gold),var(--field))}
 .step.on,.step.done{color:var(--ink)}
+.step:focus-visible .n{outline:3px solid var(--gold);outline-offset:3px}
 .step.on .n{background:var(--ink);color:#fff;border-color:var(--gold);transform:scale(1.14);box-shadow:0 0 0 6px #B4862A26}
 .step.done .n{border-color:var(--gold)}
-.stage{padding:24px}
+.stage{padding:clamp(20px,3vw,34px)}
 .stage.swap{animation:swapIn .55s cubic-bezier(.2,.8,.2,1)}
 @keyframes swapIn{from{opacity:0;transform:translateX(-26px) scale(.98)}}
 .stagehead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
@@ -133,9 +135,9 @@ section{padding:76px 0;position:relative}
 .list li:before{content:"";position:absolute;right:0;top:.7em;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #B4862A22}
 
 /* الصناعة */
-.ind{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.ind{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;align-items:stretch}
 .indart{display:grid;place-items:center;padding:14px;min-height:260px}
-.indart svg{width:100%;max-width:340px}
+.indart svg{width:100%;max-width:440px}
 .spin{transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .ph{border:2px dashed var(--gold);background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
@@ -154,16 +156,17 @@ section{padding:76px 0;position:relative}
 
 /* الدليل */
 .tools{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+@media(min-width:900px){.tools{flex-direction:row;align-items:center}#srch{max-width:380px}}
 #srch{width:100%;padding:13px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.9);background:var(--glass2);font:inherit;font-weight:800;color:var(--ink)}
 .fchips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
 .fchips::-webkit-scrollbar{display:none}
-.fc{flex:none;padding:6px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass2);font-weight:800;cursor:pointer;font-size:.9rem;transition:background .25s,color .25s,transform .2s}
+.fc{flex:none;min-height:40px;padding:6px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass2);font-weight:800;cursor:pointer;font-size:.9rem;transition:background .25s,color .25s,transform .2s}
 .fc:hover{transform:translateY(-2px)}
 .fc.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .count{color:var(--ink2);font-weight:800;margin-bottom:10px;font-size:.92rem}
 
 /* الخريطة */
-.map{position:relative;height:370px;padding:0}
+.map{position:relative;height:clamp(340px,42vw,500px);padding:0}
 .map svg.lines{position:absolute;inset:0;width:100%;height:100%}
 .map line{stroke:var(--nile);stroke-width:1;opacity:.35;vector-effect:non-scaling-stroke;stroke-dasharray:4 6;animation:flow 1.6s linear infinite}
 @keyframes flow{to{stroke-dashoffset:-10}}
@@ -195,16 +198,16 @@ footer .bottom{border-top:1px solid #ffffff1c;padding-top:16px;color:#EDEBE288;f
 .rv.in{opacity:1;transform:none;filter:none}
 .stg>.rv{transition-delay:calc(var(--i,0)*.08s)}
 
-@media(max-width:900px){nav .links{gap:12px}nav a{font-size:.84rem}}
-@media(max-width:760px){
+@media(max-width:1000px){nav .links{gap:14px}nav a{font-size:.86rem}}
+@media(max-width:860px){
  nav .links{position:fixed;inset-inline:12px;top:60px;background:var(--glass2);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-radius:18px;flex-direction:column;gap:0;
   padding:0 20px;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s,padding .3s;box-shadow:0 20px 40px -24px #12281F88}
  nav .links.open{max-height:460px;opacity:1;padding:12px 20px}
  nav .links a{padding:10px 0;font-size:.98rem}
  #mnav{display:block}
- .eg{display:none}
- .ind{grid-template-columns:1fr}
- .indart{min-height:200px}
+}
+@media(max-width:860px){.eg{display:none}.ind{grid-template-columns:1fr}.indart{min-height:220px}}
+@media(max-width:760px){
  .crow{grid-template-columns:84px 1fr 40px;gap:8px}
  .map{height:340px}
 }
@@ -510,6 +513,15 @@ function goStage(i, animate) {
   box.scrollTo({left: btn.offsetLeft - box.clientWidth / 2 + btn.clientWidth / 2, behavior: reduceMotion ? "auto" : "smooth"});
 }
 goStage(0);
+
+/* التنقل بلوحة المفاتيح بين المراحل: السهم يسار = التالي، يمين = السابق (اتجاه عربي) */
+$stepper.on("keydown", function (e) {
+  const map = {ArrowLeft: cur + 1, ArrowRight: cur - 1, Home: 0, End: stages.length - 1};
+  if (!(e.key in map)) return;
+  e.preventDefault();
+  goStage(map[e.key], true);
+  $stepper.children().eq(cur).trigger("focus");
+});
 
 /* ========== 2) التعليم العالي والمدارس ========== */
 const higher = [
